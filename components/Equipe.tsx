@@ -6,13 +6,13 @@ const team = [
         name: "Álvaro Alves",
         role: "CEO & Founder",
         desc: "Especialista em desenvolvimento de software e arquitetura de sistemas escaláveis.",
-        image: "/alvaroo.png",
+        image: "/logocld.png",
     },
     {
         name: "Enzo Leão",
         role: "CTO & Co-Founder",
         desc: "Focado em tecnologia, performance e soluções modernas para produtos digitais.",
-        image: "/enzol.png",
+        image: "/logocld.png",
     },
 ];
 
