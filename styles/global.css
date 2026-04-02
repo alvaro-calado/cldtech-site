@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+body {
+    background: radial-gradient(circle at 20% 20%, #1a2a6c, #0b0f2a 60%);
+    color: white;
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Glow animado */
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.35), transparent);
+    filter: blur(120px);
+    z-index: 0;
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(100px, 50px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.network {
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
