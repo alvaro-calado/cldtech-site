@@ -5,7 +5,7 @@ const projects = [
     {
         title: "Pratto – Platform delivery",
         desc: "Plataforma completa com painel admin, pagamentos e gestão de entregas.",
-        tag: "Web",
+        tag: "Aplicação Web",
         tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
     },
@@ -24,9 +24,9 @@ const projects = [
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
     },
     {
-        title: "Landing Page",
-        desc: "Landing page para apresentação de serviços e captação de leads.",
-        tag: "Web",
+        title: "Sócio Hub",
+        desc: "Aplicação para gestão de sócios, pagamentos e comunicação integrada para clubes e associações.",
+        tag: "Aplicação Web",
         tech: ["Next.js", "Tailwind CSS", "Vercel"],
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
     },
