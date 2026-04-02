@@ -25,7 +25,7 @@ const projects = [
     },
     {
         title: "Sócio Hub",
-        desc: "Aplicação para gestão de sócios, pagamentos e comunicação integrada para clubes e associações.",
+        desc: "Aplicação para gestão de sócios, pagamentos e comunicação para associações.",
         tag: "Aplicação Web",
         tech: ["Next.js", "Tailwind CSS", "Vercel"],
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
