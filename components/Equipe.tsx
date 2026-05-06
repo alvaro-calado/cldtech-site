@@ -20,7 +20,7 @@ const team = [
         name: "Álvaro Alves",
         role: "CEO & Founder",
         desc: "Desenvolvedor de Software com experiência em arquitetura de sistemas escaláveis e liderança de produtos digitais.",
-        skills: ["Next.js", "Node.js", "AWS", "TypeScript"],
+        skills: ["Next.js", "Node.js", "MySQL", "TypeScript"],
         accent: "from-blue-500 to-cyan-400",
     },
     {
