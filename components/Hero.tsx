@@ -20,9 +20,7 @@ const TECH_BADGES = [
 ];
 
 const STATS = [
-    { value: 10, suffix: "+", label: "Projetos" },
-    { value: 8,  suffix: "+", label: "Clientes" },
-    { value: 2,  suffix: "+", label: "Anos" },
+    { value: 2, suffix: "+", label: "Anos" },
 ];
 
 const TERMINAL_LINES = [
