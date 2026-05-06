@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const WORDS = ["Sistemas Web", "Apps Mobile", "Infraestrutura Cloud", "Experiências Digitais"];
+const WORDS = ["Sistemas Web", "Apps Mobile", "Sites Modernos", "Soluções Cloud"];
 
 const TECH_BADGES = [
     { label: "React",       color: "#61DAFB", x: "12%",  y: "18%" },
@@ -219,15 +219,19 @@ export default function Hero() {
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] max-w-2xl"
                     >
                         Transformamos ideias em{" "}
-                        <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-transparent bg-clip-text gradient-animate">
+                        <span className="inline-grid bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-transparent bg-clip-text gradient-animate">
+                            {/* Ghost: mantém a largura do texto mais longo, invisível */}
+                            <span className="invisible col-start-1 row-start-1 whitespace-nowrap" aria-hidden>
+                                {WORDS.reduce((a, b) => a.length >= b.length ? a : b)}
+                            </span>
                             <AnimatePresence mode="wait">
                                 <motion.span
                                     key={wordIdx}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                                    className="inline-block whitespace-nowrap"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.35 }}
+                                    className="col-start-1 row-start-1 whitespace-nowrap"
                                 >
                                     {WORDS[wordIdx]}
                                 </motion.span>
