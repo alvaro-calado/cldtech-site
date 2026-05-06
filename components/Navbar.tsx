@@ -37,23 +37,23 @@ export default function Navbar() {
         <motion.nav
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-0 w-full z-50 px-5 md:px-10 py-5"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-0 w-full z-50 px-4 md:px-8 py-3"
         >
             <div
                 className={`max-w-7xl mx-auto flex justify-between items-center transition-all duration-500 ${
                     scrolled
-                        ? "bg-[#0b0f2a]/80 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-3 shadow-xl shadow-black/30"
+                        ? "bg-[#0b0f2a]/80 backdrop-blur-2xl border border-white/10 rounded-xl px-5 py-2 shadow-lg shadow-black/30"
                         : "bg-transparent"
                 }`}
             >
                 {/* Logo */}
-                <motion.div whileHover={{ scale: 1.04 }} className="flex items-center gap-2.5">
+                <motion.div whileHover={{ scale: 1.04 }} className="flex items-center gap-2">
                     <div className="relative">
-                        <Image src="/logocld.png" alt="CldTech" width={34} height={34} className="rounded-lg" />
-                        <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-blue-500/30 to-purple-500/30 blur-sm" />
+                        <Image src="/logocld.png" alt="CldTech" width={28} height={28} className="rounded-md" />
+                        <div className="absolute inset-0 rounded-md bg-gradient-to-tr from-blue-500/30 to-purple-500/30 blur-sm" />
                     </div>
-                    <span className="font-bold text-lg tracking-tight">CldTech</span>
+                    <span className="font-bold text-base tracking-tight">CldTech</span>
                 </motion.div>
 
                 {/* Desktop links */}

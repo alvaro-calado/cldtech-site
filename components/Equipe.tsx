@@ -1,12 +1,25 @@
 "use client";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+function Avatar({ name, accent }: { name: string; accent: string }) {
+    const initials = name.split(" ").map(n => n[0]).join("").slice(0, 2);
+    return (
+        <div className="relative h-52 flex flex-col items-center justify-center bg-black/20">
+            <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${accent} p-[2px] shadow-2xl`}>
+                <div className="w-full h-full rounded-full bg-[#0d1130] flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white tracking-wide">{initials}</span>
+                </div>
+            </div>
+            <div className={`absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent`} />
+        </div>
+    );
+}
+
 const team = [
     {
         name: "Álvaro Alves",
         role: "CEO & Founder",
         desc: "Desenvolvedor de Software com experiência em arquitetura de sistemas escaláveis e liderança de produtos digitais.",
-        image: "/alvaroo.png",
         skills: ["Next.js", "Node.js", "AWS", "TypeScript"],
         accent: "from-blue-500 to-cyan-400",
     },
@@ -14,7 +27,6 @@ const team = [
         name: "Enzo Leão",
         role: "CTO & Co-Founder",
         desc: "Analista e Desenvolvedor com expertise em desenvolvimento full-stack, arquitetura de APIs e liderança técnica.",
-        image: "/enzol.png",
         skills: ["React", "Nest.js", "MySQL", "Docker"],
         accent: "from-purple-500 to-violet-400",
     },
@@ -50,20 +62,10 @@ function MemberCard({ member, index }: { member: typeof team[0]; index: number }
             {/* Card */}
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden group-hover:border-white/20 transition-colors duration-300">
 
-                {/* Photo */}
-                <div className="relative h-64 overflow-hidden">
-                    <motion.img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                        animate={{ scale: 1 }}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.5 }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f2a] via-black/20 to-transparent" />
-
-                    {/* Role badge */}
-                    <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-full bg-gradient-to-r ${member.accent} text-[11px] font-semibold shadow-lg`}>
+                {/* Avatar */}
+                <div className="relative overflow-hidden">
+                    <Avatar name={member.name} accent={member.accent} />
+                    <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-full bg-gradient-to-r ${member.accent} text-[11px] font-semibold shadow-lg z-10`}>
                         {member.role}
                     </div>
                 </div>

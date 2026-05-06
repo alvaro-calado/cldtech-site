@@ -172,7 +172,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative pt-28 md:pt-36 pb-16 px-5 md:px-12 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
+        <section className="relative pt-24 md:pt-32 pb-12 px-5 md:px-12 max-w-7xl mx-auto flex flex-col justify-center">
 
             {/* Floating tech badges — desktop only */}
             <div className="absolute inset-0 pointer-events-none hidden xl:block">
@@ -196,7 +196,7 @@ export default function Hero() {
             </div>
 
             {/* Two-column layout */}
-            <div className="grid lg:grid-cols-[1fr_480px] gap-12 xl:gap-20 items-center w-full">
+            <div className="grid lg:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full">
 
                 {/* LEFT — content */}
                 <div>
@@ -223,11 +223,11 @@ export default function Hero() {
                             <AnimatePresence mode="wait">
                                 <motion.span
                                     key={wordIdx}
-                                    initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-                                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                                    exit={{ opacity: 0, y: -24, filter: "blur(8px)" }}
-                                    transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                                    className="inline-block"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                    className="inline-block whitespace-nowrap"
                                 >
                                     {WORDS[wordIdx]}
                                 </motion.span>
@@ -283,7 +283,7 @@ export default function Hero() {
                 </div>
 
                 {/* RIGHT — terminal */}
-                <div className="hidden lg:block">
+                <div className="mt-2 lg:mt-0">
                     <Terminal />
                 </div>
             </div>

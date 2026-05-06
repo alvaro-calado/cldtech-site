@@ -1,21 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 
-const PARTICLES = Array.from({ length: 48 }, (_, i) => ({
+const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     size: 1 + (i % 3) * 0.6,
     left: (i * 31 + (i * i * 7) % 53) % 94 + 3,
     top: (i * 17 + (i * i * 11) % 43) % 92 + 4,
-    delay: (i * 0.18) % 5,
-    duration: 4 + (i % 6),
+    delay: (i * 0.3) % 5,
+    duration: 5 + (i % 5),
 }));
 
 const GLOWS = [
-    { color: "bg-blue-500/25",   size: 700, top: -120, left: -120, xRange: [0, 140, 0],  yRange: [0, 80, 0],  dur: 14 },
-    { color: "bg-purple-500/25", size: 700, top: "auto", left: "auto", right: -120, bottom: -120, xRange: [0, -140, 0], yRange: [0, -80, 0], dur: 18 },
-    { color: "bg-cyan-500/15",   size: 500, top: "40%", left: "50%",  xRange: [0, -60, 0],  yRange: [0, 80, 0],  dur: 22 },
-    { color: "bg-indigo-600/15", size: 400, top: "20%", left: "70%",  xRange: [0, 80, 0],   yRange: [0, -60, 0], dur: 19 },
-    { color: "bg-violet-500/15", size: 450, top: "70%", left: "10%",  xRange: [0, 60, 0],   yRange: [0, 50, 0],  dur: 25 },
+    { color: "bg-blue-500/25",   size: 700, top: -120, left: -120, xRange: [0, 120, 0],  yRange: [0, 70, 0],  dur: 16 },
+    { color: "bg-purple-500/25", size: 700, top: "auto", left: "auto", right: -120, bottom: -120, xRange: [0, -120, 0], yRange: [0, -70, 0], dur: 20 },
+    { color: "bg-cyan-500/12",   size: 450, top: "40%", left: "50%",  xRange: [0, -50, 0], yRange: [0, 70, 0], dur: 24 },
 ];
 
 export default function Background() {
@@ -61,12 +59,6 @@ export default function Background() {
                     }}
                 />
             ))}
-
-            {/* Scanline sweep */}
-            <div
-                className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/10 to-transparent pointer-events-none"
-                style={{ animation: "scanline 8s linear infinite" }}
-            />
 
             {/* Vignette */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0b0f2a_100%)]" />

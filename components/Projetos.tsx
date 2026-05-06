@@ -71,7 +71,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             onMouseLeave={onLeave}
             onMouseEnter={() => setHovered(true)}
             style={{ rotateX: sRotX, rotateY: sRotY, transformPerspective: 1100 }}
-            className="group cursor-default"
+            className="group cursor-default relative"
         >
             {/* Outer glow */}
             <motion.div
