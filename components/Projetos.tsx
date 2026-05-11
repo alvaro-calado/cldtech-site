@@ -35,6 +35,7 @@ const projects = [
         tech: ["Next.js", "Tailwind", "Vercel"],
         image: "/equa.png",
         accent: "from-violet-500 to-purple-600",
+        url: "https://equaconsultoria.com",
     },
     {
         title: "EquaTech",
@@ -44,6 +45,7 @@ const projects = [
         image: "/equatechmobile.png",
         isMobile: true,
         accent: "from-blue-600 to-indigo-500",
+        url: "https://equatech.equaconsultoria.com",
     },
 ];
 
@@ -61,7 +63,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
     };
     const onLeave = () => { rotX.set(0); rotY.set(0); setHovered(false); };
 
-    return (
+    const card = (
         <motion.div
             initial={{ opacity: 0, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -71,7 +73,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             onMouseLeave={onLeave}
             onMouseEnter={() => setHovered(true)}
             style={{ rotateX: sRotX, rotateY: sRotY, transformPerspective: 1100 }}
-            className="group cursor-default relative"
+            className={`group relative ${project.url ? "cursor-pointer" : "cursor-default"}`}
         >
             {/* Outer glow */}
             <motion.div
@@ -152,6 +154,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             </div>
         </motion.div>
     );
+
+    if (project.url) {
+        return (
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+                {card}
+            </a>
+        );
+    }
+
+    return card;
 }
 
 export default function Projects() {

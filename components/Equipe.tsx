@@ -18,18 +18,12 @@ function Avatar({ name, accent }: { name: string; accent: string }) {
 const team = [
     {
         name: "Álvaro Alves",
-        role: "CEO & Founder",
-        desc: "Desenvolvedor de Software com experiência em arquitetura de sistemas escaláveis e liderança de produtos digitais.",
-        skills: ["Next.js", "Node.js", "MySQL", "TypeScript"],
+        role: "Desenvolvedor de Software",
+        desc: "Desenvolvedor de Software com experiência em arquitetura de sistemas escaláveis ",
+        skills: ["Next.js", "React", "Node.js", "MySQL", "TypeScript"],
         accent: "from-blue-500 to-cyan-400",
     },
-    {
-        name: "Enzo Leão",
-        role: "CTO & Co-Founder",
-        desc: "Analista e Desenvolvedor com expertise em desenvolvimento full-stack, arquitetura de APIs e liderança técnica.",
-        skills: ["React", "Nest.js", "MySQL", "Docker"],
-        accent: "from-purple-500 to-violet-400",
-    },
+
 ];
 
 function MemberCard({ member, index }: { member: typeof team[0]; index: number }) {
@@ -126,9 +120,8 @@ export default function Team() {
                     Time
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold">
-                    Conheça os{" "}
                     <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600 text-transparent bg-clip-text gradient-animate">
-                        Especialistas
+                        Perfil
                     </span>
                 </h2>
                 <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
@@ -146,8 +139,10 @@ export default function Team() {
             />
 
             {/* Grid */}
-            <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                {team.map((m, i) => <MemberCard key={m.name} member={m} index={i} />)}
+            <div className="flex justify-center">
+                <div className="w-full max-w-sm">
+                    {team.map((m, i) => <MemberCard key={m.name} member={m} index={i} />)}
+                </div>
             </div>
         </section>
     );
